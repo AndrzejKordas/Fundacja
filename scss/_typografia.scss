@@ -1,0 +1,113 @@
+* {
+    -webkit-transition: 0.4s ease;
+    transition: 0.6s ease;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    /* Prevent scroll on narrow devices */
+    padding-top: 56px;
+    font-family: 'Open Sans', sans-serif !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    a {
+        font-family: 'Montserrat', sans-serif !important;
+    }
+    h1:after,
+    h2:after,
+    h3:after,
+    h4:after {
+        content: " ";
+        display: block;
+        background: $teal;
+        height: 4px;
+        width: 40%;
+        margin: 1rem auto;
+    }
+}
+
+.blueBox {
+    background: $blue;
+}
+
+.greenBox {
+    background: $green;
+}
+
+.navbar-nav {
+
+    a {
+        color: #eee;
+        padding: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        &:hover {
+            text-decoration: none;
+            background: $pink;
+        }
+
+        @media (max-width: 990px) {
+            display: block;
+            padding: 0.5rem;
+        }
+    }
+    li {
+        @media (max-width: 990px) {
+            text-align: center;
+        }
+    }
+
+}
+
+
+
+.kolumny {
+    margin: 90px 0;
+    text-align: center;
+    p {
+        min-height: 120px;
+
+    }
+    h3 {
+        color: #007bff;
+    }
+    a {
+        @include linkBut(40%);
+    }
+
+    @media (max-width: 600px) {
+        div {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.pasek {
+    @include blokiPaskow($tloPasek,0,90px);
+    background-position: center center;
+    a {
+        @include linkBut(200px);
+        border: 2px solid #fff;
+        background: none;
+    }
+}
+
+footer {
+   @include blokiPaskow($tloFooter,90px,0);
+    background-position: center center;
+    
+    li {
+        list-style: none;
+        margin:0.5rem;
+    }
+    a {
+        color: #fff;
+        &:hover{
+            color:aqua;
+            text-decoration: none;
+        }
+    }
+}
