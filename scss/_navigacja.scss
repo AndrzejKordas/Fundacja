@@ -1,7 +1,56 @@
 /* nawigacja */
-.sub-menu{
-    display:none;
+.navbar-nav {
+
+    a {
+        color: #333;
+        padding: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        &:hover {
+            text-decoration: none;
+            background: $pink;
+        }
+
+        @media (max-width: 990px) {
+            display: block;
+            padding: 0.5rem;
+        }
+    }
+    li {
+        @media (max-width: 990px) {
+            text-align: center;
+        }
+    }
+
 }
+
+.sub-menu.sub-menu,
+.sub-menu {
+    display: none;
+    /*********************/
+    padding: 1rem;
+    background: $pink;
+    z-index: +1;
+    a {
+        color: $blue;
+        margin: 1rem;
+        &:hover {
+            color: #333;
+        }
+    }
+    li {
+        border-bottom: 1px solid #333;
+        position: relative;
+        list-style: none;
+    }
+}
+/* rozwijanie */
+.navbar-nav li:focus .sub-menu,
+.navbar-nav li:hover .sub-menu {
+    display: block;
+    position: absolute;
+}
+
 .navigation-top {
     background: #fff;
     border-bottom: 1px solid #eee;
