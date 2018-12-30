@@ -1,14 +1,14 @@
 /* nawigacja */
+
 .navbar-nav {
 
     a {
         color: #333;
         padding: 1rem;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         font-weight: 600;
         &:hover {
             text-decoration: none;
-            background: $pink;
         }
 
         @media (max-width: 990px) {
@@ -17,6 +17,10 @@
         }
     }
     li {
+        &:hover {
+            text-decoration: none;
+            background: $blue;
+        }
         @media (max-width: 990px) {
             text-align: center;
         }
@@ -24,7 +28,7 @@
 
 }
 
-.sub-menu.sub-menu,
+
 .sub-menu {
     display: none;
     /*********************/
@@ -32,7 +36,7 @@
     background: $pink;
     z-index: +1;
     a {
-        color: $blue;
+        color: #fff;
         margin: 1rem;
         &:hover {
             color: #333;
@@ -44,12 +48,39 @@
         list-style: none;
     }
 }
-/* rozwijanie */
+
+
+.sub-menu li ul {
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    overflow: hidden;
+    left: 100.2%;
+    top: 0;
+    transition: all 0.5s;
+}
+
+/*  R O Z W I J A N I E  */
+
+/*pierwszy stopień*/
+
 .navbar-nav li:focus .sub-menu,
 .navbar-nav li:hover .sub-menu {
     display: block;
     position: absolute;
 }
+
+/*drugi stopień*/
+
+.sub-menu li:focus ul,
+.sub-menu li:hover ul {
+    display: block;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    padding:8px;
+}
+
 
 .navigation-top {
     background: #fff;
